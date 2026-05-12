@@ -1,56 +1,53 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redefinir Senha</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
 
-<div class="container">
-    <h2>Redefinir Senha</h2>
-    <p id="texto-passo">Passo 1 de 3 — Informe seu e-mail</p>
+<main class="container">
+    <section class="card">
+        <h2>Redefinir Senha</h2>
+        <p id="texto-passo">Passo 1 de 3 — Informe seu e-mail</p>
 
-    <div class="passo ativo" id="passo1">
-        <label for="email">E-mail cadastrado:</label>
-        <input type="email" id="email" placeholder="seuemail@email.com">
-        <span class="mensagem erro" id="erroEmail">Por favor informe um e-mail válido.</span>
-        <button onclick="verificarEmail()">Enviar código</button>
-    </div>
-
-    <div class="passo" id="passo2">
-        <label for="codigo">Código de verificação:</label>
-        <input type="text" id="codigo" placeholder="Digite o código recebido" maxlength="6">
-        <span class="mensagem erro" id="erroCodigo">Código incorreto. Tente novamente.</span>
-        <button onclick="verificarCodigo()">Verificar código</button>
-        <button class="voltar" onclick="voltarPasso(1)">Voltar</button>
-    </div>
-
-    <div class="passo" id="passo3">
-        <label for="novaSenha">Nova senha:</label>
-        <input type="password" id="novaSenha" placeholder="Mínimo 6 caracteres" oninput="verificarForca()">
-
-        <div class="forca-senha">
-            <div class="forca-barra" id="forcaBarra"></div>
+        <div class="passo ativo" id="passo1">
+            <label for="email">E-mail cadastrado:</label>
+            <input type="email" id="email" placeholder="seuemail@email.com">
+            <span class="mensagem erro" id="erroEmail">Por favor informe um e-mail válido.</span>
+            <button onclick="verificarEmail()">Enviar código</button>
         </div>
 
-        <label for="confirmarSenha">Confirmar senha:</label>
-        <input type="password" id="confirmarSenha" placeholder="Repita a nova senha">
+        <div class="passo" id="passo2">
+            <label for="codigo">Código de verificação:</label>
+            <input type="text" id="codigo" placeholder="Digite o código recebido" maxlength="6">
+            <span class="mensagem erro" id="erroCodigo">Código incorreto. Tente novamente.</span>
+            <button onclick="verificarCodigo()">Verificar código</button>
+            <button class="voltar" onclick="voltarPasso(1)">Voltar</button>
+        </div>
 
-        <span class="mensagem erro" id="erroSenha">As senhas não coincidem.</span>
+        <div class="passo" id="passo3">
+            <label for="novaSenha">Nova senha:</label>
+            <input type="password" id="novaSenha" placeholder="Mínimo 6 caracteres" oninput="verificarForca()">
 
-        <button onclick="redefinirSenha()">Redefinir senha</button>
-        <button class="voltar" onclick="voltarPasso(2)">Voltar</button>
-    </div>
+            <div class="forca-senha">
+                <div class="forca-barra" id="forcaBarra"></div>
+            </div>
 
-    <p class="sucesso" id="msgSucesso">
-        ✔ Senha redefinida com sucesso! Você já pode fazer login.
-    </p>
-</div>
+            <label for="confirmarSenha">Confirmar senha:</label>
+            <input type="password" id="confirmarSenha" placeholder="Repita a nova senha">
+
+            <span class="mensagem erro" id="erroSenha">As senhas não coincidem.</span>
+
+            <button onclick="redefinirSenha()">Redefinir senha</button>
+            <button class="voltar" onclick="voltarPasso(2)">Voltar</button>
+        </div>
+
+        <p class="sucesso" id="msgSucesso">
+            ✔ Senha redefinida com sucesso! Você já pode fazer login.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>Developed by Christian Silva | IT Support Portfolio</p>
+</footer>
 
 <!-- Projeto feito por Christian Silva, curso de ADS Uninter. -->
 
 <script src="script.js"></script>
 </body>
-</html>
