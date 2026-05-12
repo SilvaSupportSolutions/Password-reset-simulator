@@ -1,128 +1,93 @@
+:root {
+  --bg-color: #0f172a;
+  --card-color: #111827;
+  --primary-color: #38bdf8;
+  --primary-hover: #0ea5e9;
+  --text-color: #e5e7eb;
+  --muted-text: #94a3b8;
+  --border-color: #1e293b;
+  --font-main: Arial, sans-serif;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, #020617, var(--bg-color));
+  color: var(--text-color);
+  min-height: 100vh;
 }
 
 .container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    width: 350px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 22px;
+.card {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #555;
+button,
+.btn {
+  background: var(--primary-color);
+  color: #020617;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    outline: none;
+button:hover,
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
 }
 
-input:focus {
-    border-color: #4a90e2;
+input,
+select,
+textarea {
+  background: #020617;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 12px;
+  outline: none;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
 }
 
-button:hover {
-    background-color: #357abd;
+footer {
+  text-align: center;
+  color: var(--muted-text);
+  padding: 24px 0;
+  font-size: 14px;
 }
 
-/* Mensagem de Erro e Sucesso */
-.mensagem {
-    font-size: 13px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    display: none;
-}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
 
-.erro {
-    color: red;
-}
-
-.sucesso {
-    color: green;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
-    display: none;
-}
-
-.forca-senha {
-    height: 6px;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    margin-top: -10px;
-    background-color: #eee;
-}
-
-.forca-barra {
-    height: 100%;
-    border-radius: 3px;
-    width: 0%;
-    transition: width 0.3s, background-color 0.3s;
-}
-
-.passo {
-    display: none;
-}
-
-.passo.ativo {
-    display: block;
-}
-
-.voltar {
-    background-color: transparent;
-    color: #4a90e2;
-    border: 1px solid #4a90e2;
-    margin-top: 8px;
-}
-
-.voltar:hover {
-    background-color: #eaf2ff;
-}
-
-#texto-passo {
-    font-size: 13px;
-    color: #888;
-    text-align: center;
-    margin-bottom: 18px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
