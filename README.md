@@ -1,6 +1,6 @@
 # Password Reset Simulator
 
-A simple password reset simulator created with HTML, CSS and JavaScript.
+Password recovery and account access workflow simulation for IT support environments.
 
 ## About the project
 
